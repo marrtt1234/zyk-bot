@@ -1,0 +1,56 @@
++client.on('message', msg => {
+    if (msg.content === '!online') {
+      if (msg.author === 'Zytekaron#0572')
+        client.user.setStatus('READY');
+          msg.channel.send('Status set to online');
+              client.user.setGame('!help')
+    }
+});
+client.on('message', msg => {
+    if (msg.content === '!idle') {
+      if (msg.author === 'Zytekaron#0572')
+        client.user.setStatus('IDLE');
+          msg.channel.send('Status set to idle');
+              client.user.setGame('!help')
+    }
+});
+client.on('message', msg => {
+    if (msg.content === '!dnd') {
+      if (msg.author === 'Zytekaron#0572')
+        client.user.setStatus('NEARLY');
+          msg.channel.send('Status set to dnd');
+              client.user.setGame('!help')
+    }
+});
+///////////////////////////////////////////////////////////
+else if (command === "!purge") {
+    if (msg.member.hasPermission("MANAGE_MESSAGES")) {
+      const amount = (args[0] ? parseInt(args[0]) : 0) + 2;
+        if (isNaN(amount)){
+          msg.channel.send("Please input a valid number.");
+}           else {
+          msg.channel.bulkDelete(amount);
+        }
+}
+///////////
+}
+  else if (command === "!purge") {
+      if (msg.member.hasPermission("MANAGE_MESSAGES")) {
+      textchannel.bulkDelete(args[0] || 1);
+      console.log(args);
+      }
+  }
+//////////////////////////////////////////////////////////
+else if (message === "!setgame"){
+    if (msg.author === "Zytekaron#0572"){
+      client.user.setGame("test234")
+    }else{
+      msg.channel.send("You must be a Bot Admin to do this.")
+      console.log(`${msg.author} tried changing 'Game' setting!`)
+    }
+  }
+}
+/////////////////////
+  var id = require('id');
+///////
+  fs.writeFile('id.txt', 'id + 1')
